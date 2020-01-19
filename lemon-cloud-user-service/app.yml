@@ -1,0 +1,8 @@
+server:
+  port: 33385
+  name: cn.lemonit.cloud.user.service
+micro:
+  enabled: true
+  registry:
+    type: etcd
+    address: localhost:2379
