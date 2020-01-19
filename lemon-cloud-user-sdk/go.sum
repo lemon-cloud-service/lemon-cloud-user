@@ -11,7 +11,10 @@ github.com/golang/protobuf v1.3.2 h1:6nsPYzhq5kReh6QImI3k5qWzO4PEbvbIW2cwSfR/6xs
 github.com/golang/protobuf v1.3.2/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
 github.com/google/go-cmp v0.2.0/go.mod h1:oXzfMopK8JAjlY9xF4vHSVASa0yLyX7SntLO5aqRK0M=
 github.com/lemon-cloud-service/lemon-cloud-user v0.0.0-20200119034614-e04a7f7a61d1 h1:pb1+PVkcTQmyK+jHAjtFlhfmRXaJ3xlPLely5mvicN0=
+github.com/lemon-cloud-service/lemon-cloud-user v0.0.0-20200119055948-71a9cacb1cad h1:z5qcPSUMapEHyBqJ4hRvbOr+5V1Y+7WppE1AMyGmWKI=
 github.com/lemon-cloud-service/lemon-cloud-user/lemon-cloud-user-common v0.0.0-20200119034614-e04a7f7a61d1 h1:znEEGqzj72gwoP4FaVkDmjViiylQBdinEsMODC8L/1E=
+github.com/lemon-cloud-service/lemon-cloud-user/lemon-cloud-user-common v0.0.0-20200119055948-71a9cacb1cad h1:halGtSwq6G7VqYZ2r4/fUxzO5Bju4q8JVaVizNPUfWo=
+github.com/lemon-cloud-service/lemon-cloud-user/lemon-cloud-user-common v0.0.0-20200119055948-71a9cacb1cad/go.mod h1:H6nQ7cVKT6+IU/grEUTSYWKvyI9/BM7OvAt2bAvUnJc=
 github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4/go.mod h1:xMI15A0UPsDsEKsMN9yxemIoYk6Tm2C1GtYGdfGttqA=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/exp v0.0.0-20190121172915-509febef88a4/go.mod h1:CJ0aWSM057203Lf6IL+f9T1iT9GByDxfZKAQTCR3kQA=

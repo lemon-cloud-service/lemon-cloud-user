@@ -1,9 +1,9 @@
 package main
 
 import (
+	"github.com/lemon-cloud-service/lemon-cloud-user/lemon-cloud-user-common/service"
+	"github.com/lemon-cloud-service/lemon-cloud-user/lemon-cloud-user-service/service_impl"
 	"google.golang.org/grpc"
-	"lemonit.cn/cloud/user/service/service"
-	"lemonit.cn/cloud/user/service/service_impl"
 	"net"
 )
 
@@ -17,6 +17,6 @@ func main() {
 	s := grpc.NewServer()
 
 	// 注册HelloService
-	service.RegisterEnrollServiceServer(s, service_impl.EnrollServiceImpl{})
+	service.RegisterUserLoginServiceServer(s, &service_impl.LoginServiceImpl{})
 	s.Serve(listen)
 }
