@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package dto;
+
+message ClientInfo {
+    string device_id = 1; // 设备ID，客户端请通过算法对设备进行唯一标识
+    string system_info = 2; // 系统信息，如手机操作系统信息，微信版本号，浏览器信息等
+    string timestamp = 3; // 客户端时间，unix时间戳
+    string app_version = 4; // APP对应的版本号
+    string expected_api_version = 5; // 期望的API版本号（预留，防止将来后端API扩展导致的前后端不兼容）
+    string expected_response_lang = 6; // 期望的API返回值语言，（预留，如果API可能返回多国语言，那么会根据此字段决定本次返回的语言，极特殊情况下可能会用到，不建议使用，通常还是建议返回描述性简介英语，客户端根据数据来在前端做本地化）
+}
+
+message ServiceInfo {
+    string timestamp = 1; // 服务器时间，unix时间戳
+    string api_version = 2; // 当前服务器端API版本
+    bool success = 3; // 本次请求是否成功
+    int32 err_code = 4; // 如果success为false，那么本字段会返回错误码，success为true则为0
+    string err_msg = 5; // 如果success为false，那么本字段会返回错误信息提示，具体的错误信息采用哪种语言返回是根据ClientInfo中的expected_response_lang字段决定的，success为true则为空字符串
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package dto;
+
+import "lemon-cloud-user-common/dto/general_dto.proto";
+
+message SignInByNumberReq {
+    dto.ClientInfo client_info = 1;
+    string number = 2;
+    string password = 3;
+}
+
+message SignInByWeChatReq {
+    dto.ClientInfo client_info = 1;
+    string code = 2;
+}
+
+message SignInRsp {
+    ServiceInfo service_info = 1;
+    string token = 2;
+    int32 expired_at = 3;
+}

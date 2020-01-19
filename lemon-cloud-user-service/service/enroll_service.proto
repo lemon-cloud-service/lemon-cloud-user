@@ -1,0 +1,10 @@
+syntax = 'proto3';
+
+package service;
+
+import "lemon-cloud-user-common/dto/enroll_dto.proto";
+
+service EnrollService {
+    rpc SignInByNumber (dto.SignInByNumberReq) returns (dto.SignInRsp) {
+    }
+}
