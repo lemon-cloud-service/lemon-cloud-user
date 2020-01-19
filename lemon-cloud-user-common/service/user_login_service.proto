@@ -1,0 +1,11 @@
+syntax = 'proto3';
+
+package service;
+option go_package = "github.com/lemon-cloud-service/lemon-cloud-user/lemon-cloud-user-common/service";
+
+import "dto/enroll_dto.proto";
+
+service UserLoginService {
+    rpc LoginByNumber (dto.LoginByNumberReq) returns (dto.LoginRsp) {
+    }
+}

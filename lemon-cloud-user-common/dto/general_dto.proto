@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package dto;
+option go_package = "github.com/lemon-cloud-service/lemon-cloud-user/lemon-cloud-user-common/dto";
 
 message ClientInfo {
     string device_id = 1; // 设备ID，客户端请通过算法对设备进行唯一标识
@@ -9,6 +10,7 @@ message ClientInfo {
     string app_version = 4; // APP对应的版本号
     string expected_api_version = 5; // 期望的API版本号（预留，防止将来后端API扩展导致的前后端不兼容）
     string expected_response_lang = 6; // 期望的API返回值语言，（预留，如果API可能返回多国语言，那么会根据此字段决定本次返回的语言，极特殊情况下可能会用到，不建议使用，通常还是建议返回描述性简介英语，客户端根据数据来在前端做本地化）
+    string token = 7; // 用户身份token，如果登录请求或非用户请求，该值可以为空字符串
 }
 
 message ServiceInfo {

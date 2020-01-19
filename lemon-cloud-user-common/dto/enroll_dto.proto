@@ -1,21 +1,22 @@
 syntax = "proto3";
 
 package dto;
+option go_package = "github.com/lemon-cloud-service/lemon-cloud-user/lemon-cloud-user-common/dto";
 
-import "lemon-cloud-user-common/dto/general_dto.proto";
+import "dto/general_dto.proto";
 
-message SignInByNumberReq {
+message LoginByNumberReq {
     dto.ClientInfo client_info = 1;
     string number = 2;
     string password = 3;
 }
 
-message SignInByWeChatReq {
+message LoginByWeChatReq {
     dto.ClientInfo client_info = 1;
     string code = 2;
 }
 
-message SignInRsp {
+message LoginRsp {
     ServiceInfo service_info = 1;
     string token = 2;
     int32 expired_at = 3;
