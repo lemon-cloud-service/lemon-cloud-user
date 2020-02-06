@@ -6,4 +6,6 @@ lemon-cloud-user 用户相关服务
 
 ```bash
 go mod vendor
+go mod download
+go run main.go
 ```
