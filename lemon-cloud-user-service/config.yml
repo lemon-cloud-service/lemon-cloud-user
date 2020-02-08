@@ -1,0 +1,16 @@
+registry:
+  kind: etcd
+  endpoints:
+    - localhost:2379
+  username:
+  password:
+service:
+  namespace: cn.lemonit.cloud
+  secret_id: none
+  secret_key: none
+  override_host: localhost
+
+#server:
+#  db:
+#    type: mysql
+#    url: root:1em0nsOft+@(db.lemonit.cn)/dbname?charset=utf8&parseTime=True&loc=Local
