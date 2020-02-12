@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"github.com/lemon-cloud-service/lemon-cloud-common/lemon-cloud-common-components/lccc_micro_service"
 	"github.com/lemon-cloud-service/lemon-cloud-user/lemon-cloud-user-service/define"
 	"github.com/lemon-cloud-service/lemon-cloud-user/lemon-cloud-user-service/manager"
 	log "github.com/sirupsen/logrus"
@@ -26,10 +27,10 @@ func SystemStart() {
 
 	// init registry
 	log.Info("Start configuring the registry...")
-	err = manager.EtcdManagerInstance().ClientInit(
-		manager.ConfigManagerInstance().GeneralConfig().Registry.Endpoints,
-		manager.ConfigManagerInstance().GeneralConfig().Registry.Username,
-		manager.ConfigManagerInstance().GeneralConfig().Registry.Password)
+	err = lccc_micro_service.SystemServiceInstance().RegisterNewService(&lccc_micro_service.ServiceRegisterConfig{
+		ServiceGeneralConfig: manager.ConfigManagerInstance().GeneralConfig(),
+		ServiceInfo:          define.GetServiceInfo(),
+	})
 	if err != nil {
 		log.Error("System start failed. Error configuring registry: ", err.Error())
 		os.Exit(1)
