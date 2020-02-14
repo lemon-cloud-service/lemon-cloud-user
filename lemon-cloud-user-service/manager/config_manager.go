@@ -1,14 +1,14 @@
 package manager
 
 import (
-	"github.com/lemon-cloud-service/lemon-cloud-common/lemon-cloud-common-define/lccd_strings"
-	"github.com/lemon-cloud-service/lemon-cloud-common/lemon-cloud-common-model/lccm_config"
+	"github.com/lemon-cloud-service/lemon-cloud-common/lemon-cloud-common-components/lccc_define"
+	"github.com/lemon-cloud-service/lemon-cloud-common/lemon-cloud-common-components/lccc_model"
 	"github.com/lemon-cloud-service/lemon-cloud-common/lemon-cloud-common-utils/lccu_config"
 	"sync"
 )
 
 type ConfigManager struct {
-	generalConfig *lccm_config.GeneralConfig
+	generalConfig *lccc_model.GeneralConfig
 }
 
 var configManagerInstance *ConfigManager
@@ -23,8 +23,8 @@ func ConfigManagerInstance() *ConfigManager {
 
 func (cm *ConfigManager) Init() error {
 	if !cm.InitializationStatus() {
-		cm.generalConfig = &lccm_config.GeneralConfig{}
-		err := lccu_config.LoadYamlConfigFile(lccd_strings.FILE_PATH_GENERAL_CONFIG_FILE, cm.generalConfig)
+		cm.generalConfig = &lccc_model.GeneralConfig{}
+		err := lccu_config.LoadYamlConfigFile(lccc_define.FILE_PATH_GENERAL_CONFIG_FILE, cm.generalConfig)
 		if err != nil {
 			return err
 		}
@@ -32,7 +32,7 @@ func (cm *ConfigManager) Init() error {
 	return nil
 }
 
-func (cm *ConfigManager) GeneralConfig() *lccm_config.GeneralConfig {
+func (cm *ConfigManager) GeneralConfig() *lccc_model.GeneralConfig {
 	return cm.generalConfig
 }
 
