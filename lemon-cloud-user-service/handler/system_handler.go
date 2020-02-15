@@ -30,7 +30,7 @@ func SystemStart() {
 	err = lccc_micro_service.SystemServiceInstance().RegisterNewService(&lccc_micro_service.ServiceRegisterConfig{
 		ServiceGeneralConfig: manager.ConfigManagerInstance().GeneralConfig(),
 		ServiceInfo:          define.GetServiceInfo(),
-	})
+	}, define.GetSystemSettings())
 	if err != nil {
 		log.Error("System start failed. Error configuring registry: ", err.Error())
 		os.Exit(1)
