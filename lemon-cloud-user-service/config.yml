@@ -9,7 +9,7 @@ service:
   secret_id: none
   secret_key: none
   override_host: localhost
-  port: 33385
+  port: 33010
 
 #server:
 #  db:

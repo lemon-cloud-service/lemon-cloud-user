@@ -7,16 +7,24 @@ import (
 )
 
 const SYSTEM_INFO_NAME string = "Lemon Cloud User Center"
-const SYSTEM_INFO_SERVICE_TAG string = "lemon_cloud_user"
+const SYSTEM_INFO_SERVICE_KEY string = "lemon_cloud_user"
 const SYSTEM_INFO_SERVICE_INTRODUCE string = "Lemon Cloud User Center Service"
 const SYSTEM_INFO_VERSION string = "1.0.0"
+const SYSTEM_INFO_VERSION_NUM uint16 = 1
 const SYSTEM_INFO_SPLIT_LINE string = "====================================================================="
 
-func GetServiceInfo() *lccc_model.ServiceInfo {
-	return &lccc_model.ServiceInfo{
-		ServiceTag:       SYSTEM_INFO_SERVICE_TAG,
+func GetServiceBaseInfo() *lccc_model.ServiceBaseInfo {
+	return &lccc_model.ServiceBaseInfo{
+		ServiceKey:       SYSTEM_INFO_SERVICE_KEY,
 		ServiceName:      SYSTEM_INFO_NAME,
 		ServiceIntroduce: SYSTEM_INFO_SERVICE_INTRODUCE,
+	}
+}
+
+func GetServiceApplicationInfo() *lccc_model.ServiceApplicationInfo {
+	return &lccc_model.ServiceApplicationInfo{
+		ApplicationVersion:    SYSTEM_INFO_VERSION,
+		ApplicationVersionNum: SYSTEM_INFO_VERSION_NUM,
 	}
 }
 
